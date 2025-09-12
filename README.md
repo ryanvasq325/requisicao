@@ -1,2 +1,1 @@
-# requisicao
-fazer as requisiçoes
+Projeto Colaborativo de Código Aberto
