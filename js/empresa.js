@@ -23,7 +23,7 @@ async function BuscarCep(){
     document.getElementById('logradouro').value = json.logradouro
     document.getElementById('bairro').value = json.bairro
     document.getElementById('uf').value = json.uf
-    document.getElementById('cidade').value = json.uf
+    document.getElementById('cidade').value = json.localidade
 }
 const a = async () => {
     const cnpjValue = Cnpj.value;
