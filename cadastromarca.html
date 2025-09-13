@@ -9,21 +9,26 @@
         font-family: Arial, sans-serif;
         margin: 20px;
         }
+
         #form, #list {
         display: none; /* Esconde as seções inicialmente */
         }
+
         table {
         width: 100%;
-        morder-collapse: collapse; /* Tira os espaços entre as células da tabela */
+        
         }
+
         th, td {
         border: 1px solid #ccc; /* Borda das células */
         padding: 8px;           /* Espaçamento interno */
         text-align: left;       /* Alinhamento do texto à esquerda */
         }
+
         th {
         background: #f0f0f0;     /* Cor de fundo do cabeçalho da tabela */
         }
+
         button {
         margin: 5px 0;           /* Espaço entre os botões */
         }
@@ -37,16 +42,16 @@
         <button id="btn-new">Novo</button> <!-- Botão para ir ao formulário -->
         <button id="btn-clear">Limpar Tudo</button> <!-- Botão para apagar todos os itens da lista -->
         <table>
-        <thead>
-        <tr>
-       <th>Código</th>
-       <th>Nome</th>
-       <th>Descrição</th>
-       <th>Data de Criação</th>
-      <th>Data de Atualização</th>
-      </tr>
-      </thead>
-      <tbody id="table-body"><!-- Corpo da tabela onde os itens serão inseridos--></tbody>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Data de Criação</th>
+                    <th>Data de Atualização</th>
+                </tr>
+            </thead>
+            <tbody id="table-body"><!-- Corpo da tabela onde os itens serão inseridos por JS --></tbody>
         </table>
     </div>
 
@@ -64,7 +69,7 @@
     </div>
 
     <script>
-        //  utilitária para pegar elementos pelo ID de forma mais curta
+        // Função utilitária para pegar elementos pelo ID de forma mais curta
         function $(id) {
             return document.getElementById(id);
         }
@@ -87,22 +92,22 @@
 
         // Função que preenche a tabela HTML com os itens do array "categorias"
         function renderTable() {
-        const tbody = $('table-body');
-        tbody.innerHTML = ''; // Limpa a tabela antes de preencher
-        categorias.forEach(categoria => { // Percorre cada item do array
-        const tr = document.createElement('tr'); // Cria uma nova linha
-        tr.innerHTML = `
+            const tbody = $('table-body');
+            tbody.innerHTML = ''; // Limpa a tabela antes de preencher
+            categorias.forEach(categoria => { // Percorre cada item do array
+                const tr = document.createElement('tr'); // Cria uma nova linha
+                tr.innerHTML = `
                     <td>${categoria.codigo}</td>
                     <td>${categoria.nome}</td>
                     <td>${categoria.descricao}</td>
                     <td>${categoria.createdAt}</td>
                     <td>${categoria.updatedAt}</td>
                 `;
-        tbody.appendChild(tr); // Adiciona a linha na tabela
+                tbody.appendChild(tr); // Adiciona a linha na tabela
             });
         }
 
-        // retorna a data/hora atual formatada 
+        // Função que retorna a data/hora atual formatada para o campo datetime-local
         function nowISOForInput() {
             return new Date().toISOString().slice(0, 16);
         }
@@ -145,4 +150,5 @@
         });
     </script>
 </body>
+
 </html>
