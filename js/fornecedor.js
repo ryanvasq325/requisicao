@@ -12,13 +12,14 @@ async function BuscarCep(){
     const options = {
         method: 'GET',
         mode: 'cors',
-        cache: 'default',
+        cache: 'default'
     };
     const response = await fetch(url,options);
     const json = await response.json();
     document.getElementById('logradouro').value = json.logradouro;
     document.getElementById('bairro').value = json.bairro;
     document.getElementById('cidade').value = json.localidade;
+    document.getElementById('uf').value = json.estado;
 }
 const a = async () => {
     const cnpjValue = Cnpj.value;
@@ -36,7 +37,6 @@ const options = {
 const response = await fetch(url,options);
 const json = await response.json();
 document.getElementById('razao_social').value = json.razao_social;
-document.getElementById('ie').value = json.ie;
 document.getElementById('nome_fantasia').value = json.nome_fantasia;
 
 Cep.value = json.cep;
