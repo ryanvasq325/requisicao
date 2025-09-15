@@ -44,12 +44,17 @@
   <button onclick="window.location.href='listagem.html'" class="btn">📄 Ver Listagem</button>
 
   <form id="formCliente">
-    <input type="text" id="cnpj" placeholder="CNPJ" required />
-    <input type="text" id="cep" placeholder="CEP" required />
-    <input type="text" id="nome" placeholder="Nome" required />
-    <input type="email" id="email" placeholder="E-mail" required />
-    <input type="tel" id="telefone" placeholder="Telefone" required />
-    <button type="submit" class="btn">Cadastrar</button>
+    <form id="form" name="form" enctype="multipart/form-data">
+        <input type="text" id="cnpj" name="cnpj" placeholder="Digite o cnpj..." required>
+        <input type="text" id="cep" name="cep" placeholder="Digite o CEP..." required>
+        <input type="text" id="logradouro" name="logradouro" placeholder="Digite o logradouro..." required>
+        <input type="text" id="número" name="número" placeholder="Digite o número..." required>
+        <input type="text" id="bairro" name="bairro" placeholder="Digite o bairro..." required>
+        <input type="text" id="cidade" name="cidade" placeholder="Digite o cidade..." required>
+        <input type="text" id="nome" placeholder="Nome" required />
+        <input type="email" id="email" placeholder="E-mail" required />
+        <input type="tel" id="telefone" placeholder="Telefone" required />
+        <button type="submit" class="btn">Cadastrar</button>
   </form>
 
   <script>
@@ -85,6 +90,7 @@
       form.reset();
     });
   </script>
+ <script src="js/cliente.js"></script> 
 
 </body>
 </html>

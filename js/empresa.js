@@ -13,17 +13,12 @@ async function BuscarCep(){
         method: 'GET',
         mode: 'cors',
         cache: 'default',
-    }
+    };
     const response = await fetch(url,options);
     const json = await response.json();
-    console.log(json.logradouro);
-    console.log(json.bairro);
-    console.log(json.localidade);
-    console.log(json.uf);
-    document.getElementById('logradouro').value = json.logradouro
-    document.getElementById('bairro').value = json.bairro
-    document.getElementById('uf').value = json.uf
-    document.getElementById('cidade').value = json.localidade
+    document.getElementById('logradouro').value = json.logradouro;
+    document.getElementById('bairro').value = json.bairro;
+    document.getElementById('cidade').value = json.localidade;
 }
 const a = async () => {
     const cnpjValue = Cnpj.value;
@@ -33,8 +28,19 @@ const a = async () => {
         .replace('/','')
         .trim();
 const url = `https://brasilapi.com.br/api/cnpj/v1/${cnpjFormatedValue}`;
+const options = {
+    method: 'GET',
+    mode: 'cors',
+    cache: 'default'
+};
+const response = await fetch(url,options);
+const json = await response.json();
+document.getElementById('razao_social').value = json.razao_social;
+document.getElementById('ie').value = json.ie;
+document.getElementById('nome_fantasia').value = json.nome_fantasia;
 
-return;
+Cep.value = json.cep;
+await BuscarCep();
 }
 
 Cep.addEventListener('change', async () => {
