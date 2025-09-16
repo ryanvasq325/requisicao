@@ -2,68 +2,40 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/cliente.css">
   <title>Cadastro de Clientes</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f4f4f4;
-    }
-    h1 {
-      text-align: center;
-    }
-    form {
-      background: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    input {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-    }
-    .btn {
-      padding: 10px 15px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-    .btn:hover {
-      background-color: #45a049;
-    }
-  </style>
 </head>
 <body>
 
+  
+  <button onclick="window.location.href='index.html'" class="btn btn-voltar">⬅ Voltar ao Início</button>
+
   <h1>Cadastro de Clientes</h1>
 
+  <button onclick="window.location.href='listagem.html'" class="btn btn-listagem">📄 Ver Listagem</button>
 
-  <button onclick="window.location.href='listagem.html'" class="btn">📄 Ver Listagem</button>
+  <form id="formCliente" class="form-control" enctype="multipart/form-data">
+    <input type="text" id="cnpj" name="cnpj" placeholder="Digite o CNPJ..." required>
+    <input type="text" id="cep" name="cep" placeholder="Digite o CEP..." required>
+    <input type="text" id="nome_fantasia" name="nome_fantasia" placeholder="Digite o nome fantasia..." required>
+    <input type="text" id="razao_social" name="razao_social" placeholder="Digite a razão social..." required>
+    <input type="text" id="logradouro" name="logradouro" placeholder="Digite o logradouro..." required>
+    <input type="text" id="numero" name="numero" placeholder="Digite o número..." required>
+    <input type="text" id="bairro" name="bairro" placeholder="Digite o bairro..." required>
+    <input type="text" id="cidade" name="cidade" placeholder="Digite a cidade..." required>
+    <input type="text" id="uf" name="uf" placeholder="Digite o Estado..." maxlength="2" required>
 
-  <form id="formCliente">
-    <form id="form" name="form" enctype="multipart/form-data">
-        <input type="text" id="cnpj" name="cnpj" placeholder="Digite o cnpj..." required>
-        <input type="text" id="cep" name="cep" placeholder="Digite o CEP..." required>
-        <input type="text" id="nome_fantasia" name="nome_fantasia" placeholder="Digite o nome fantasia..." required>
-        <input type="text" id="razao_social" name="razao_social" placeholder="Digite a razão social..." required>
-        <input type="text" id="logradouro" name="logradouro" placeholder="Digite o logradouro..." required>
-        <input type="text" id="número" name="número" placeholder="Digite o número..." required>
-        <input type="text" id="bairro" name="bairro" placeholder="Digite o bairro..." required>
-        <input type="text" id="cidade" name="cidade" placeholder="Digite o cidade..." required>
-        <input type="text" id="uf" name="uf" placeholder="Digite o Estado..." required>
-        <input type="text" id="nome" placeholder="Nome" required />
-        <input type="email" id="email" placeholder="E-mail" required />
-        <input type="tel" id="telefone" placeholder="Telefone" required />
-        <button type="submit" class="btn">Cadastrar</button>
+    <input type="text" id="nome" placeholder="Nome" required>
+    <input type="email" id="email" placeholder="E-mail" required>
+    <input type="tel" id="telefone" placeholder="Telefone" required>
+
+    <button type="submit" class="btn">Cadastrar</button>
   </form>
 
   <script>
     const form = document.getElementById("formCliente");
 
-   
     let clientes = JSON.parse(localStorage.getItem("clientes")) || [];
     let proximoCodigo = clientes.length ? clientes[clientes.length - 1].codigo + 1 : 1;
 
@@ -89,11 +61,10 @@
       clientes.push(cliente);
       localStorage.setItem("clientes", JSON.stringify(clientes));
       alert("Cliente cadastrado com sucesso!");
-
       form.reset();
     });
   </script>
- <script src="js/cliente.js"></script> 
 
+  <script src="js/cliente.js"></script>
 </body>
 </html>
