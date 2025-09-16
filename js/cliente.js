@@ -36,8 +36,7 @@ const options = {
 };
 const response = await fetch(url,options);
 const json = await response.json();
-document.getElementById('razao_social').value = json.razao_social;
-document.getElementById('nome_fantasia').value = json.nome_fantasia;
+
 
 Cep.value = json.cep;
 await BuscarCep();
