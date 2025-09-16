@@ -1,13 +1,13 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 5;
     box-sizing: border-box;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
 body {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    background: linear-gradient(135deg, #a435e4 0%, #00f2fe 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -18,7 +18,7 @@ body {
 
 form {
     background: #ffffff;
-    padding: 30px 40px;
+    padding: 30px 30px;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     max-width: 450px;
@@ -31,7 +31,7 @@ form {
 
 form input[type="text"] {
     width: 100%;
-    padding: 12px 14px;
+    padding: 12px 12px;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 15px;
